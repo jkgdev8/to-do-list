@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+// Use state hook
+import React, { useState } from "react";
+import Todolist from "./Todolist";
 
+
+// First place to start is at the app.js this is the root of your application
 function App() {
+  const [todos, setTodos] = useState([{id: 1, name: 'Todo 1', complete: false}])
+  // can only return one thing
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      // Props      
+      <Todolist todos = {todos}/>
+      <input type='text' />
+      <button>Add Todo</button>
+      <button> Clear Complete</button>
+      <div> 0 left to do</div>
+    </>
+  )
+  
+  
 }
 
 export default App;
